@@ -252,26 +252,12 @@ git push -u origin main
 
 ---
 
-```
-git rm --cached file.txt
-```
-
-If you forget `--cached` `git` will give the following error:
-```
-error: the following file has changes staged in the index:
-    file.txt
-(use --cached to keep the file, or -f to force removal)
-```
-* If you use `-f`, the file won't just be unstaged, it will be deleted from your computer, as if you ran the command `rf file.txt`
-
----
-
 ## `git` branches and workflows
 
 ![center](../images/main.svg)
 
 * When you initialise a repo you have one branch
-* Using and committing to only one branch is a "basic" git workflow. 
+* Using and committing to only one branch is a "basic" git workflow.
 * This works well when only one person is working on a repo
   * A latex thesis
 
