@@ -1,0 +1,76 @@
+mkdir git_demo
+cd git_demo
+git init
+
+# Accidentally creating a git repostitory in the wrong folder example
+cd ~
+git init
+rm -rf .git
+
+cd git_demo/
+ls -la
+ls .git
+
+# Commiting a new empty file
+touch file.txt
+git status
+git add file.txt
+git status
+git commit    #Quit vim without saving so commit was aborted
+git commit -m "Intial commit"
+git log
+
+# Adding a Github remote branch
+git remote add origin https://github.com/JPJSea/didactic-octo-funicular.git
+git branch -M main
+git push -u origin main
+git status
+git log
+
+#cloning the repo
+cd
+git clone https://github.com/JPJSea/didactic-octo-funicular.git
+ls
+cd didactic-octo-funicular/
+
+# creating a new branch
+git branch new_branch
+git branch --list
+# switching from main to the new branch
+git checkout new_branch
+
+# Accidentally creating a branch called list
+git branch list
+git branch --list
+# deleting the branch
+git branch -d list
+
+# creating and switching to a new branch in one line with checkout
+git checkout -b new_branch2
+touch README.md
+git add *
+git commit -m "Added README empty"
+git log
+
+# merging branches
+git checkout new_branch
+git merge new_branch2
+git log
+
+#sending new_branch to Github
+git push
+#Need to tell git where to push to
+git push --set-upstream origin new_branch
+
+##### AFTER making changes to main branch on github.com #####
+# fetching upstream main
+git checkout main
+git fetch
+git status
+git merge origin/main
+cat README.md
+
+
+##### AFTER making more changes to main branch on github.com #####
+# combining fetch and merge commands with git pull
+git pull
