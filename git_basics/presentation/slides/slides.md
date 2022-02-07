@@ -182,7 +182,7 @@ b98cd9d doesn't work :(
 ```
 * The only time you should write a short message is for a trivial thing like a typo fix
 * For a short commit message use `-m` for message: `git commit -m "Fixed typo in README"`
-* If you write a bad commit message, change it with `git commit --ammend`
+* If you write a bad commit message, change it with `git commit --amend`
 
 ---
 
